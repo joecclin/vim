@@ -1,0 +1,44 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DIR	/usr/include/dirent.h	/^} DIR;$/;"	t	typeref:struct:__anon1
+DIRBLKSIZ	/usr/include/dirent.h	/^#define	DIRBLKSIZ	/;"	d
+DTF_HIDEW	/usr/include/dirent.h	/^#define DTF_HIDEW	/;"	d
+DTF_NODUP	/usr/include/dirent.h	/^#define DTF_NODUP	/;"	d
+DTF_REWIND	/usr/include/dirent.h	/^#define DTF_REWIND	/;"	d
+_DIRENT_H_	/usr/include/dirent.h	/^#define _DIRENT_H_$/;"	d
+__DTF_READALL	/usr/include/dirent.h	/^#define __DTF_READALL	/;"	d
+__anon1::__dd_buf	/usr/include/dirent.h	/^	char	*__dd_buf;	\/* data buffer *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_fd	/usr/include/dirent.h	/^	int	__dd_fd;	\/* file descriptor associated with directory *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_flags	/usr/include/dirent.h	/^	int	__dd_flags;	\/* flags for readdir *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_len	/usr/include/dirent.h	/^	int	__dd_len;	\/* size of data buffer *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_loc	/usr/include/dirent.h	/^	long	__dd_loc;	\/* offset in current buffer *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_lock	/usr/include/dirent.h	/^	__darwin_pthread_mutex_t __dd_lock; \/* for thread locking *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_rewind	/usr/include/dirent.h	/^	long	__dd_rewind;	\/* magic cookie for rewinding *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_seek	/usr/include/dirent.h	/^	long	__dd_seek;	\/* magic cookie returned *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_size	/usr/include/dirent.h	/^	long	__dd_size;	\/* amount of data returned *\/$/;"	m	struct:__anon1	access:public
+__anon1::__dd_td	/usr/include/dirent.h	/^	struct _telldir *__dd_td; \/* telldir position recording *\/$/;"	m	struct:__anon1	typeref:struct:__anon1::_telldir	access:public
+__dd_buf	/usr/include/dirent.h	/^	char	*__dd_buf;	\/* data buffer *\/$/;"	m	struct:__anon1	access:public
+__dd_fd	/usr/include/dirent.h	/^	int	__dd_fd;	\/* file descriptor associated with directory *\/$/;"	m	struct:__anon1	access:public
+__dd_flags	/usr/include/dirent.h	/^	int	__dd_flags;	\/* flags for readdir *\/$/;"	m	struct:__anon1	access:public
+__dd_len	/usr/include/dirent.h	/^	int	__dd_len;	\/* size of data buffer *\/$/;"	m	struct:__anon1	access:public
+__dd_loc	/usr/include/dirent.h	/^	long	__dd_loc;	\/* offset in current buffer *\/$/;"	m	struct:__anon1	access:public
+__dd_lock	/usr/include/dirent.h	/^	__darwin_pthread_mutex_t __dd_lock; \/* for thread locking *\/$/;"	m	struct:__anon1	access:public
+__dd_rewind	/usr/include/dirent.h	/^	long	__dd_rewind;	\/* magic cookie for rewinding *\/$/;"	m	struct:__anon1	access:public
+__dd_seek	/usr/include/dirent.h	/^	long	__dd_seek;	\/* magic cookie returned *\/$/;"	m	struct:__anon1	access:public
+__dd_size	/usr/include/dirent.h	/^	long	__dd_size;	\/* amount of data returned *\/$/;"	m	struct:__anon1	access:public
+__dd_td	/usr/include/dirent.h	/^	struct _telldir *__dd_td; \/* telldir position recording *\/$/;"	m	struct:__anon1	typeref:struct:__anon1::_telldir	access:public
+__opendir2	/usr/include/dirent.h	/^DIR *__opendir2(const char *, int) __DARWIN_ALIAS_I(__opendir2);$/;"	v
+alphasort	/usr/include/dirent.h	/^int alphasort(const void *, const void *) __DARWIN_INODE64(alphasort);$/;"	v
+closedir	/usr/include/dirent.h	/^int closedir(DIR *) __DARWIN_ALIAS(closedir);$/;"	v
+dirfd	/usr/include/dirent.h	/^#define	dirfd(/;"	d
+opendir	/usr/include/dirent.h	/^DIR *opendir(const char *) __DARWIN_ALIAS_I(opendir);$/;"	v
+readdir	/usr/include/dirent.h	/^struct dirent *readdir(DIR *) __DARWIN_INODE64(readdir);$/;"	v
+readdir_r	/usr/include/dirent.h	/^int readdir_r(DIR *, struct dirent *, struct dirent **) __DARWIN_INODE64(readdir_r);$/;"	v
+rewinddir	/usr/include/dirent.h	/^void rewinddir(DIR *) __DARWIN_ALIAS_I(rewinddir);$/;"	v
+scandir	/usr/include/dirent.h	/^    int (*)(struct dirent *), int (*)(const void *, const void *)) __DARWIN_INODE64(scandir);$/;"	v
+seekdir	/usr/include/dirent.h	/^void seekdir(DIR *, long) __DARWIN_ALIAS_I(seekdir);$/;"	v
+telldir	/usr/include/dirent.h	/^long telldir(DIR *) __DARWIN_ALIAS_I(telldir);$/;"	v
