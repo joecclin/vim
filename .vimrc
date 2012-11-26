@@ -40,7 +40,7 @@ if has("win32")
 
     "set omnicppcomplete
     set nocp
-    :nmap <F9> :!c:\vimruntime\ctags -R --C++-kinds=+p --fields=+iaS --extra=+q -f "%:p:h\tags" "%:p:h"<CR>
+    :nmap <F8> :!c:\vimruntime\ctags -R --C++-kinds=+p --fields=+iaS --extra=+q -f "%:p:h\tags" "%:p:h"<CR>
 
 elseif has("macunix")
     "set font
@@ -68,7 +68,8 @@ elseif has("macunix")
     let g:SuperTabDefaultCompletionType="<C-P>"
 
     "set hotkey of taglist to F11 amd setup taglist
-    let Tlist_Ctags_Cmd='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .'
+    :nmap <F8> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+    :let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags'
 
     " fix the ms ^M issue
     :set ff=unix
@@ -182,12 +183,12 @@ else
     
     "set omnicppcomplete                                               
     set nocp                                                           
-    :nmap <F9> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
+    :nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
     "set supertab                                                      
     "let g:SuperTabRetainCompletionType=2                              
     "let g:SuperTabDefaultCompletionType="<C-X><C-O>"                  
-    let g:SuperTabMappingTabLiteral="<F8>"            
+    "let g:SuperTabMappingTabLiteral="<F8>"            
 
 endif
 
@@ -226,8 +227,8 @@ endif
 " set hotkey
 nnoremap <F11> <ESC>:TlistToggle<cr><C-W><C-W>
 nnoremap <F12> <ESC>:NERDTreeToggle<cr>
-:nmap <M-Right> :tabnext<cr>
-:nmap <M-Left> :tabprev<cr>
+:nmap <F10> :tabnext<cr>
+:nmap <F9> :tabprev<cr>
 
 "set NERDTree 
 let NERDTreeShowBookmarks=1             " show book mark
