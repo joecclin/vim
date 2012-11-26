@@ -42,7 +42,7 @@ if has("win32")
     set nocp
     :nmap <F9> :!c:\vimruntime\ctags -R --C++-kinds=+p --fields=+iaS --extra=+q -f "%:p:h\tags" "%:p:h"<CR>
 
-elseif has("mac")
+elseif has("macunix")
     "set font
     :set guifont=Monaco:h14
 
@@ -70,7 +70,8 @@ elseif has("mac")
     "set hotkey of taglist to F11 amd setup taglist
     let Tlist_Ctags_Cmd='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .'
 
-
+    " fix the ms ^M issue
+    :set ff=unix
 
     "set super tab
     let g:SuperTabRetainCompletionType=2
@@ -83,8 +84,7 @@ elseif has("mac")
     " set tab for makefile
     autocmd FileType make setlocal noexpandtab
 
-    
-elseif 
+else 
     " -----------------------------Linux offical setting ------------------
     " An example for a vimrc file.
     "
