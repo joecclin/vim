@@ -42,6 +42,9 @@ if has("win32")
     set nocp
     :nmap <F8> :!c:\vimruntime\ctags -R --C++-kinds=+p --fields=+iaS --extra=+q -f "%:p:h\tags" "%:p:h"<CR>
 
+    " set backup dir
+    set backupdir=c:\vimtemp
+
 elseif has("macunix")
     "set font
     :set guifont=Monaco:h14
@@ -84,6 +87,9 @@ elseif has("macunix")
 
     " set tab for makefile
     autocmd FileType make setlocal noexpandtab
+
+    " set backup dir
+    set backupdir=~/vimtmp
 
 else 
     " -----------------------------Linux offical setting ------------------
@@ -185,6 +191,9 @@ else
     set nocp                                                           
     :nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+    " set backup dir
+    set backupdir=~/vimtmp
+
     "set supertab                                                      
     "let g:SuperTabRetainCompletionType=2                              
     "let g:SuperTabDefaultCompletionType="<C-X><C-O>"                  
@@ -241,6 +250,9 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_Show_One_File=1
 let Tlist_Close_On_Select=1
 
+" set use backup
+set backup 
+set writebackup 
 
 
 
