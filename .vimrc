@@ -45,6 +45,11 @@ if has("win32")
     " set backup dir
     set backupdir=c:\vimtemp
 
+    " set hot key of page control
+    "nnoremap <silent> <C-TAB> :tabn<cr>
+    :nmap <M-Right> :tabnext<cr>
+    :nmap <M-Left> :tabprev<cr>
+
 elseif has("macunix")
     "set font
     :set guifont=Monaco:h14
