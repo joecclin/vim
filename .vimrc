@@ -45,6 +45,9 @@ if has("win32")
     " set backup dir
     set backupdir=c:\vimtemp
 
+    " set the H scroll bar
+    set guioptions+=b
+
     " set hot key of page control
     "nnoremap <silent> <C-TAB> :tabn<cr>
     :nmap <M-Right> :tabnext<cr>
