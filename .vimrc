@@ -1,3 +1,4 @@
+
 " set OS options
 if has("win32")
     " -----------------------------windows offical setting ------------------
@@ -117,9 +118,6 @@ else
         finish
     endif
 
-    " fix the ms ^M issue
-    :set ff=unix
-
     " Use Vim settings, rather then Vi settings (much better!).
     " This must be first, because it changes other options as a side effect.
     set nocompatible
@@ -220,13 +218,51 @@ endif
 :set ruler                          " show the line and column number of the cusor position
 :set showcmd                        " show the command
 :set ignorecase                     " ignore the case of searching
+:set smartcase                      " When searching try to be smart about cases
 :set incsearch                      " search while typing 
 :set number                         " show the line number
 :set nowrap                         " not chang the longer line to the second line
 :set hlsearch                       " high light search
 :syntax enable                      " enable high light of language supporting
-:colorscheme peachpuff              " color scheme
+:colorscheme desert                 " color scheme -- peachpuff
 :set autoread                       " auto reload
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Files, backups and undo
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+""""""""""""""""""""""""""""""
+" => Visual mode related
+""""""""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+ 
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+ 
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+ 
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>
 
 
 " set tab = 4 space
@@ -239,7 +275,10 @@ endif
 :set sidescroll=10                  "set the H bundary of moving the screen
 
 "  set V boundry
-:set so=3                           "set the V bundary of moving the screen
+:set so=7                           "set the V bundary of moving the screen
+
+" Turn on the WiLd menu
+set wildmenu
 
 "  set whichwrap
 :set whichwrap=b,s,<,>,[,]          "set the wrap character
@@ -263,7 +302,10 @@ let Tlist_Close_On_Select=1
 
 " set use backup
 set backup 
-set writebackup 
+set writebackup
+
+" set hightline current line
+set cursorline
 
 
 
