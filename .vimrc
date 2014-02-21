@@ -305,7 +305,7 @@ set backup
 set writebackup
 
 " set hightline current line
-set cursorline
+"set cursorline
 
 
 
