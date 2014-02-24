@@ -88,14 +88,14 @@
     " go back to where you were before the search.  
     "
 
-    nmap <F8>s :tab cs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap <F8>g :tab cs find g <C-R>=expand("<cword>")<CR><CR>	
-    nmap <F8>c :tab cs find c <C-R>=expand("<cword>")<CR><CR>	
-    nmap <F8>t :tab cs find t <C-R>=expand("<cword>")<CR><CR>	
-    nmap <F8>e :tab cs find e <C-R>=expand("<cword>")<CR><CR>	
-    nmap <F8>f :tab cs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <F8>i :tab cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-    nmap <F8>d :tab cs find d <C-R>=expand("<cword>")<CR><CR>	
+    nmap <F8>s :tab scs find s <C-R>=expand("<cword>")<CR><CR>	
+    nmap <F8>g :tab scs find g <C-R>=expand("<cword>")<CR><CR>	
+    nmap <F8>c :tab scs find c <C-R>=expand("<cword>")<CR><CR>	
+    nmap <F8>t :tab scs find t <C-R>=expand("<cword>")<CR><CR>	
+    nmap <F8>e :tab scs find e <C-R>=expand("<cword>")<CR><CR>	
+    nmap <F8>f :tab scs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <F8>i :tab scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <F8>d :tab scs find d <C-R>=expand("<cword>")<CR><CR>	
 
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
@@ -106,14 +106,14 @@
     " can be simulated roughly via:
     "    nmap <C-@>s <C-W><C-S> :tab cs find s <C-R>=expand("<cword>")<CR><CR>	
 
-    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
-    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
-    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
+    "nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	
+    "nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	
+    "nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	
+    "nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
+    "nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
+    "nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
+    "nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+    "nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
 
 
     " Hitting CTRL-space *twice* before the search type does a vertical 

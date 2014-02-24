@@ -82,7 +82,7 @@ else
         let g:SuperTabDefaultCompletionType="<C-P>"
 
         "set hotkey of taglist to F11 amd setup taglist
-        :nmap <F8> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+        ":nmap <F8> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
         :let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
         " fix the ms ^M issue
@@ -199,7 +199,7 @@ else
         
         "set omnicppcomplete                                               
         set nocp                                                           
-        :nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
+        ":nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
         " set backup dir
         set backupdir=~/vimtmp
@@ -307,8 +307,7 @@ set writebackup
 
 " set hightline current line
 "set cursorline
-
-
+:nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
 
 
 
