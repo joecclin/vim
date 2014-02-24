@@ -54,160 +54,161 @@ if has("win32")
     :nmap <M-Right> :tabnext<cr>
     :nmap <M-Left> :tabprev<cr>
 
-elseif has("macunix")
-    "set font
-    :set guifont=Monaco:h14
-
-    "set Pmenu color
-    hi Pmenu ctermbg=200 guibg=LightMagenta
-    hi PmenuSel ctermbg=8 guibg=Grey
-    
-    " set omnicppcomplete
-    set nocp
-    filetype plugin on
-    set completeopt=longest,menu
-    "set tags+=~/.vim/tags/
-    let OmniCpp_NamespaceSearch = 1 
-    let OmniCpp_GlobalScopeSearch = 1 
-    let OmniCpp_ShowAccess = 1 
-    let OmniCpp_MayCompleteDot = 1 
-    let OmniCpp_MayCompleteArrow = 1 
-    let OmniCpp_MayCompleteScope = 1 
-    let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-
-    "set super tab
-    let g:SuperTabRetainCompletionType=2
-    let g:SuperTabDefaultCompletionType="<C-P>"
-
-    "set hotkey of taglist to F11 amd setup taglist
-    :nmap <F8> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-    :let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags'
-
-    " fix the ms ^M issue
-    :set ff=unix
-
-    "set super tab
-    let g:SuperTabRetainCompletionType=2
-    let g:SuperTabDefaultCompletionType="<C-P>"
-
-    " set omnifunc for c and cpp
-    autocmd FileType c set omnifunc=ccomplete#Complete
-    "autocmd FileType cpp set omnifunc=cppcomplete#Complete
-
-    " set tab for makefile
-    autocmd FileType make setlocal noexpandtab
-
-    " set backup dir
-    set backupdir=~/vimtmp
-
 else 
-    " -----------------------------Linux offical setting ------------------
-    " An example for a vimrc file.
-    "
-    " Maintainer:   Bram Moolenaar <Bram@vim.org>
-    " Last change:  2006 Aug 12
-    "
-    " To use it, copy it to
-    "     for Unix and OS/2:  ~/.vimrc
-    "         for Amiga:  s:.vimrc
-    "  for MS-DOS and Win32:  $VIM\_vimrc
-    "       for OpenVMS:  sys$login:.vimrc
+    let os=substitute(system('uname'), '\n', '', '')
+    if os == 'Darwin' || os == 'Mac'
+        "set font
+        :set guifont=Monaco:h14
 
-    " When started as "evim", evim.vim will already have done these settings.
-    if v:progname =~? "evim"
-        finish
+        "set Pmenu color
+        hi Pmenu ctermbg=200 guibg=LightMagenta
+        hi PmenuSel ctermbg=8 guibg=Grey
+        
+        " set omnicppcomplete
+        set nocp
+        filetype plugin on
+        set completeopt=longest,menu
+        "set tags+=~/.vim/tags/
+        let OmniCpp_NamespaceSearch = 1 
+        let OmniCpp_GlobalScopeSearch = 1 
+        let OmniCpp_ShowAccess = 1 
+        let OmniCpp_MayCompleteDot = 1 
+        let OmniCpp_MayCompleteArrow = 1 
+        let OmniCpp_MayCompleteScope = 1 
+        let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+
+        "set super tab
+        let g:SuperTabRetainCompletionType=2
+        let g:SuperTabDefaultCompletionType="<C-P>"
+
+        "set hotkey of taglist to F11 amd setup taglist
+        :nmap <F8> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+        :let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+
+        " fix the ms ^M issue
+        :set ff=unix
+
+        "set super tab
+        let g:SuperTabRetainCompletionType=2
+        let g:SuperTabDefaultCompletionType="<C-P>"
+
+        " set omnifunc for c and cpp
+        autocmd FileType c set omnifunc=ccomplete#Complete
+        "autocmd FileType cpp set omnifunc=cppcomplete#Complete
+
+        " set tab for makefile
+        autocmd FileType make setlocal noexpandtab
+
+        " set backup dir
+        set backupdir=~/vimtmp
+    elseif os == 'Linux'
+        " -----------------------------Linux offical setting ------------------
+        " An example for a vimrc file.
+        "
+        " Maintainer:   Bram Moolenaar <Bram@vim.org>
+        " Last change:  2006 Aug 12
+        "
+        " To use it, copy it to
+        "     for Unix and OS/2:  ~/.vimrc
+        "         for Amiga:  s:.vimrc
+        "  for MS-DOS and Win32:  $VIM\_vimrc
+        "       for OpenVMS:  sys$login:.vimrc
+
+        " When started as "evim", evim.vim will already have done these settings.
+        if v:progname =~? "evim"
+            finish
+        endif
+
+        " Use Vim settings, rather then Vi settings (much better!).
+        " This must be first, because it changes other options as a side effect.
+        set nocompatible
+
+        " allow backspacing over everything in insert mode
+        set backspace=indent,eol,start
+
+        if has("vms")
+            set nobackup      " do not keep a backup file, use versions instead
+        else
+            set backup        " keep a backup file
+        endif
+        set history=50      " keep 50 lines of command line history
+        set ruler       " show the cursor position all the time
+        set showcmd     " display incomplete commands
+        set incsearch       " do incremental searching
+
+        " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+        " let &guioptions = substitute(&guioptions, "t", "", "g")
+
+        " Don't use Ex mode, use Q for formatting
+        map Q gq
+
+        " In an xterm the mouse should work quite well, thus enable it.
+        set mouse=a
+
+        " This is an alternative that also works in block mode, but the deleted
+        " text is lost and it only works for putting the current register.
+        "vnoremap p "_dp
+
+        " Switch syntax highlighting on, when the terminal has colors
+        " Also switch on highlighting the last used search pattern.
+        if &t_Co > 2 || has("gui_running")
+            syntax on
+            set hlsearch
+        endif
+
+        " Only do this part when compiled with support for autocommands.
+        if has("autocmd")
+
+            " Enable file type detection.
+            " Use the default filetype settings, so that mail gets 'tw' set to 72,
+            " 'cindent' is on in C files, etc.
+            " Also load indent files, to automatically do language-dependent indenting
+            filetype plugin indent on
+
+            " Put these in an autocmd group, so that we can delete them easily.
+            augroup vimrcEx
+                au!
+
+                " For all text files set 'textwidth' to 78 characters.
+                autocmd FileType text setlocal textwidth=78
+
+                " When editing a file, always jump to the last known cursor position.
+                " Don't do it when the position is invalid or when inside an event handler
+                " (happens when dropping a file on gvim).
+                autocmd BufReadPost *
+                            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                            \   exe "normal g`\"" |
+                            \ endif
+
+            augroup END
+
+        else
+
+            set autoindent        " always set autoindenting on
+
+        endif " has("autocmd")
+
+        " Convenient command to see the difference between the current buffer and th
+        " file it was loaded from, thus the changes you made.
+        command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+                    \ | wincmd p | diffthi 
+        " -----------------------------Linux offical setting end -------------------------
+        
+        " set the ctags exec 
+        let Tlist_Ctags_Cmd='/usr/bin/ctags'
+        
+        "set omnicppcomplete                                               
+        set nocp                                                           
+        :nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+        " set backup dir
+        set backupdir=~/vimtmp
+
+        "set supertab                                                      
+        "let g:SuperTabRetainCompletionType=2                              
+        "let g:SuperTabDefaultCompletionType="<C-X><C-O>"                  
+        "let g:SuperTabMappingTabLiteral="<F8>"            
     endif
-
-    " Use Vim settings, rather then Vi settings (much better!).
-    " This must be first, because it changes other options as a side effect.
-    set nocompatible
-
-    " allow backspacing over everything in insert mode
-    set backspace=indent,eol,start
-
-    if has("vms")
-        set nobackup      " do not keep a backup file, use versions instead
-    else
-        set backup        " keep a backup file
-    endif
-    set history=50      " keep 50 lines of command line history
-    set ruler       " show the cursor position all the time
-    set showcmd     " display incomplete commands
-    set incsearch       " do incremental searching
-
-    " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-    " let &guioptions = substitute(&guioptions, "t", "", "g")
-
-    " Don't use Ex mode, use Q for formatting
-    map Q gq
-
-    " In an xterm the mouse should work quite well, thus enable it.
-    set mouse=a
-
-    " This is an alternative that also works in block mode, but the deleted
-    " text is lost and it only works for putting the current register.
-    "vnoremap p "_dp
-
-    " Switch syntax highlighting on, when the terminal has colors
-    " Also switch on highlighting the last used search pattern.
-    if &t_Co > 2 || has("gui_running")
-        syntax on
-        set hlsearch
-    endif
-
-    " Only do this part when compiled with support for autocommands.
-    if has("autocmd")
-
-        " Enable file type detection.
-        " Use the default filetype settings, so that mail gets 'tw' set to 72,
-        " 'cindent' is on in C files, etc.
-        " Also load indent files, to automatically do language-dependent indenting
-        filetype plugin indent on
-
-        " Put these in an autocmd group, so that we can delete them easily.
-        augroup vimrcEx
-            au!
-
-            " For all text files set 'textwidth' to 78 characters.
-            autocmd FileType text setlocal textwidth=78
-
-            " When editing a file, always jump to the last known cursor position.
-            " Don't do it when the position is invalid or when inside an event handler
-            " (happens when dropping a file on gvim).
-            autocmd BufReadPost *
-                        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                        \   exe "normal g`\"" |
-                        \ endif
-
-        augroup END
-
-    else
-
-        set autoindent        " always set autoindenting on
-
-    endif " has("autocmd")
-
-    " Convenient command to see the difference between the current buffer and th
-    " file it was loaded from, thus the changes you made.
-    command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-                \ | wincmd p | diffthi 
-    " -----------------------------Linux offical setting end -------------------------
-    
-    " set the ctags exec 
-    let Tlist_Ctags_Cmd='/usr/bin/ctags'
-    
-    "set omnicppcomplete                                               
-    set nocp                                                           
-    :nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-    " set backup dir
-    set backupdir=~/vimtmp
-
-    "set supertab                                                      
-    "let g:SuperTabRetainCompletionType=2                              
-    "let g:SuperTabDefaultCompletionType="<C-X><C-O>"                  
-    "let g:SuperTabMappingTabLiteral="<F8>"            
-
 endif
 
 "  set VIM variable 

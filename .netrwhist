@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/usr/local/Cellar/macvim/7.3-66/MacVim.app'
+let g:netrw_dirhist_2='/Users/Josh/tools'
+let g:netrw_dirhist_3='/usr/local/Library.old'
+let g:netrw_dirhist_4='/Users/Josh/tools'
+let g:netrw_dirhist_5='/Users/Josh/tmux/.dotfiles'
+let g:netrw_dirhist_6='/Users/Josh/.vim'
