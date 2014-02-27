@@ -287,8 +287,8 @@ set wildmenu
 " set hotkey
 nnoremap <F11> <ESC>:TlistToggle<cr><C-W><C-W>
 nnoremap <F12> <ESC>:NERDTreeToggle<cr>
-:nmap <F10> :tabnext<cr>
-:nmap <F9> :tabprev<cr>
+:nmap <F3> :tabnext<cr>
+:nmap <F2> :tabprev<cr>
 
 "set NERDTree 
 let NERDTreeShowBookmarks=1             " show book mark
