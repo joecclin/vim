@@ -68,7 +68,7 @@ else
         set nocp
         filetype plugin on
         set completeopt=longest,menu
-        "set tags+=~/.vim/tags/
+        set tags+=~/.vim/tags/cpp
         let OmniCpp_NamespaceSearch = 1 
         let OmniCpp_GlobalScopeSearch = 1 
         let OmniCpp_ShowAccess = 1 
@@ -200,6 +200,15 @@ else
         "set omnicppcomplete                                               
         set nocp                                                           
         ":nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
+        set completeopt=longest,menu
+        set tags+=~/.vim/tags/cpp
+        let OmniCpp_NamespaceSearch = 1 
+        let OmniCpp_GlobalScopeSearch = 1 
+        let OmniCpp_ShowAccess = 1 
+        let OmniCpp_MayCompleteDot = 1 
+        let OmniCpp_MayCompleteArrow = 1 
+        let OmniCpp_MayCompleteScope = 1 
+        let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
         " set backup dir
         set backupdir=~/vimtmp
@@ -295,8 +304,8 @@ let NERDTreeShowBookmarks=1             " show book mark
 let NERDTreeWinPos='right'               " position of NERDTree
 
 " set vim taglist by josh
-set tags=tags;
 set autochdir
+set tags+=tags;
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Show_One_File=1
 let Tlist_Close_On_Select=1
