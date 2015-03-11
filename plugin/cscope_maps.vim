@@ -97,6 +97,14 @@
     nmap <F8>i :tab scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
     nmap <F8>d :tab scs find d <C-R>=expand("<cword>")<CR><CR>	
 
+    nmap <C-\>s :tab scs find s <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-\>g :tab scs find g <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-\>c :tab scs find c <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-\>t :tab scs find t <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-\>e :tab scs find e <C-R>=expand("<cword>")<CR><CR>	
+    nmap <C-\>f :tab scs find f <C-R>=expand("<cfile>")<CR><CR>	
+    nmap <C-\>i :tab scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-\>d :tab scs find d <C-R>=expand("<cword>")<CR><CR>	
 
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
     " makes the vim window split horizontally, with search result displayed in
@@ -116,7 +124,7 @@
     "nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
 
 
-    " Hitting CTRL-space *twice* before the search type does a vertical 
+    " Hittin CTRL-space *twice* before the search type does a vertical 
     " split instead of a horizontal one (vim 6 and up only)
     "
     " (Note: you may wish to put a 'set splitright' in your .vimrc

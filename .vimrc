@@ -84,6 +84,7 @@ else
         "set hotkey of taglist to F11 amd setup taglist
         ":nmap <F8> :ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
         :let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+        :set csprg=/usr/local/bin/cscope
 
         " fix the ms ^M issue
         :set ff=unix
@@ -318,6 +319,15 @@ set writebackup
 "set cursorline
 :nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
 
-
-
+" auto load cscope database
+function! LoadCscope()
+    let db = findfile("cscope.out", ".;")
+    if (!empty(db))
+        let path = strpart(db, 0, match(db, "/cscope.out$"))
+        set nocscopeverbose " suppress 'duplicate connection' error
+        exe "cs add " . db . " " . path
+        set cscopeverbose
+    endif
+endfunction
+au BufEnter /* call LoadCscope()
 
