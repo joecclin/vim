@@ -331,3 +331,5 @@ function! LoadCscope()
 endfunction
 au BufEnter /* call LoadCscope()
 
+" set copy to clipboard
+set clipboard=unnamed
