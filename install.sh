@@ -17,3 +17,9 @@ git config --global alias.d difftool
 # git alias ci to commit
 git config --global alias.ci commit
 git config --global alias.st status
+
+# add symbolic link
+cd ..
+ln -s .vim/.vimrc ./vimrc
+ln -s .vim/.vimproject_mappings ./vimproject_mappings
+

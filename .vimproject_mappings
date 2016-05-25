@@ -1,0 +1,2 @@
+
+nmap <buffer> <silent> t \T<CR>

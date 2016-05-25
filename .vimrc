@@ -298,7 +298,9 @@ set wildmenu
 :set whichwrap=b,s,<,>,[,]          "set the wrap character
 
 " set hotkey
-nnoremap <F11> <ESC>:TlistToggle<cr><C-W><C-W>
+"nnoremap <F10> <ESC>:Project<cr>
+nnoremap <F10> <ESC>:TlistToggle<cr><C-W><C-W>
+nmap <silent> <F11> <Plug>ToggleProject
 nnoremap <F12> <ESC>:NERDTreeToggle<cr>
 :nmap <F3> :tabnext<cr>
 :nmap <F2> :tabprev<cr>
