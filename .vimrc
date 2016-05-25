@@ -144,7 +144,7 @@ else
         map Q gq
 
         " In an xterm the mouse should work quite well, thus enable it.
-        set mouse=a
+        set mouse=n
 
         " This is an alternative that also works in block mode, but the deleted
         " text is lost and it only works for putting the current register.

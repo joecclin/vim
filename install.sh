@@ -9,6 +9,11 @@ git config --global push.default matching
 #git config --global push.default simple
 
 
+# set vimdiff to git diff 
 git config --global diff.tool vimdiff
 git config --global difftool.prompt false
 git config --global alias.d difftool
+
+# git alias ci to commit
+git config --global alias.ci commit
+git config --global alias.st status
