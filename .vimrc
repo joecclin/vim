@@ -144,7 +144,7 @@ else
         map Q gq
 
         " In an xterm the mouse should work quite well, thus enable it.
-        "set mouse=a
+        set mouse=a
 
         " This is an alternative that also works in block mode, but the deleted
         " text is lost and it only works for putting the current register.
@@ -200,7 +200,7 @@ else
         
         "set omnicppcomplete                                               
         set nocp                                                           
-        ":nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
+        :nmap <F8> :!ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
         set completeopt=longest,menu
         set tags+=~/.vim/tags/cpp
         let OmniCpp_NamespaceSearch = 1 
@@ -218,6 +218,9 @@ else
         "let g:SuperTabRetainCompletionType=2                              
         "let g:SuperTabDefaultCompletionType="<C-X><C-O>"                  
         "let g:SuperTabMappingTabLiteral="<F8>"            
+       
+        :nmap <F6> :CMake<CR>
+        :nmap <F7> :make<CR>
     endif
 endif
 
