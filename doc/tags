@@ -73,6 +73,7 @@
 ExtractSnips()	snipMate.txt	/*ExtractSnips()*
 ExtractSnipsFile()	snipMate.txt	/*ExtractSnipsFile()*
 Filename()	snipMate.txt	/*Filename()*
+Josh.txt	Josh.txt	/*Josh.txt*
 NERDTree	NERD_tree.txt	/*NERDTree*
 NERDTree-?	NERD_tree.txt	/*NERDTree-?*
 NERDTree-A	NERD_tree.txt	/*NERDTree-A*

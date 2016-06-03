@@ -200,7 +200,7 @@ else
         
         "set omnicppcomplete                                               
         set nocp                                                           
-        :nmap <F8> :!cd ..; ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
+        :nmap <F9> :!cd ..; ctags -R --C++-kinds=+p --fields=+iaS --extra=+q .<CR>
         set completeopt=longest,menu
         set tags+=~/.vim/tags/cpp
         let OmniCpp_NamespaceSearch = 1 
@@ -221,6 +221,7 @@ else
        
         :nmap <F6> :CMake<CR>
         :nmap <F7> :make<CR>
+        :nmap <F8> :Gstatus<CR>
     endif
 endif
 
